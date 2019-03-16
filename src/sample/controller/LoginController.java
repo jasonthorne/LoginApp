@@ -35,7 +35,11 @@ public class LoginController {
     void initialize() {
         //contents here were added manually!
 
-        loginBtn.setOnAction(new EventHandler<ActionEvent>() {
+        //change field font colours:
+        ///loginUserName.setStyle("-fx-text-inner-color: #ffffff");
+        ///loginPassword.setStyle("-fx-text-inner-color: #ffffff");
+
+        loginBtn.setOnAction(new EventHandler<ActionEvent>() { //give button an event handler as its action
             @Override
             public void handle(ActionEvent event) {
                 System.out.println("button clicked!");
