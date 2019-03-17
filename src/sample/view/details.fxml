@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #84ffff;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.view.Details">
+<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #84ffff;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.DetailsController"> <!--IMPORTANT!! Added correxct path to controller here!! -->
    <children>
       <Label fx:id="detailsWelcomeLbl" alignment="CENTER" layoutX="276.0" layoutY="22.0" prefHeight="17.0" prefWidth="148.0" text="Welcome!">
          <font>
