@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 
+
 public class LoginController {
 
     //Contents below pasted from 'sample control skeleton' from 'Scene Builder'. +++++++++++++++++
@@ -30,6 +31,8 @@ public class LoginController {
 
     @FXML
     private JFXButton loginBtn;
+
+
 
     @FXML
     void initialize() {
