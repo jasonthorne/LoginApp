@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #84ffff;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.view.Details">
    <children>
       <Label fx:id="detailsWelcomeLbl" alignment="CENTER" layoutX="276.0" layoutY="22.0" prefHeight="17.0" prefWidth="148.0" text="Welcome!">
@@ -40,17 +39,12 @@
       </AnchorPane>
       <AnchorPane layoutX="50.0" layoutY="215.0" prefHeight="142.0" prefWidth="600.0" style="-fx-background-color: #baffff;">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="67.0" layoutY="14.0" prefHeight="17.0" prefWidth="466.0" text="How to find me:" textAlignment="CENTER">
-               <font>
-                  <Font name="Arial" size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="80.0" layoutY="54.0" prefHeight="17.0" prefWidth="466.0" text="github.com/jasonthorne" textAlignment="CENTER" textFill="#0000ee" underline="true">
+            <Label fx:id="detailsGithub" layoutX="80.0" layoutY="54.0" prefHeight="17.0" prefWidth="466.0" text="github.com/jasonthorne" textAlignment="CENTER" textFill="#0000ee" underline="true">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="80.0" layoutY="84.0" prefHeight="17.0" prefWidth="466.0" text="linkedin.com/in/jason-thorne-1008b112a" textAlignment="CENTER" textFill="#0000ee" underline="true">
+            <Label fx:id="detailsLinkedIn" layoutX="80.0" layoutY="84.0" prefHeight="17.0" prefWidth="466.0" text="linkedin.com/in/jason-thorne-1008b112a" textAlignment="CENTER" textFill="#0000ee" underline="true">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -60,6 +54,15 @@
                   <Image url="@../assets/icons8-github-24.png" />
                </image>
             </ImageView>
+            <AnchorPane prefHeight="21.0" prefWidth="606.0" style="-fx-background-color: #4bcbcc;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="70.0" prefHeight="17.0" prefWidth="466.0" text="How to find me" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
             <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="48.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icons8-linkedin-24.png" />
