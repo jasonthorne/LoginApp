@@ -70,6 +70,35 @@ public class LoginController {
                 && !loginPassword.getText().toString().trim().equals(""));//AND password text field is NOT empty
         {
 
+            //create a loader object for FXML file:
+            FXMLLoader loader = new FXMLLoader();
+
+            //set the location from which we are loading the FXML file from:
+            loader.setLocation(getClass().getResource("/sample/view/details.fxml"));
+
+
+            try { //try catch needed here as loading is a potential fallover point
+
+                //call the loaders load method:
+                loader.load();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //create an new root, giving it the path to FXML file ("/sample/view/details.fxml")
+            Parent root = loader.getRoot();
+
+            //create a new stage:
+            Stage detailsStage = new Stage();
+
+            //give the stage a new scene object, which is itself passed the root:
+            detailsStage.setScene(new Scene(root));
+
+
+
+
+
 
             /*
             //create a new stage:
@@ -90,14 +119,14 @@ public class LoginController {
                 //add the scene to the stage:
                 detailsStage.setScene(scene);
 
-                //====================
+                //====================Moving data from this controller to DetailsController
                 //create a details controller obj (to then pass info from txt fields to):
                 DetailsController detailsController = loader.getController(); //'loader' obj knows everything about 'details.xml' '.getController' gets all of the details from it's contoller ('DetailsController' as referenced in 'details.fxml' 'anchorPane' tab).
                 //These details include all of the labels such as 'detailsName', allowing them all to now be referenced.
 
                 //now we have access to DetailsController, we can invoke it's PUBLIC 'setName' method, and pass in whatever name the user has entered into 'loginUserName' textfield (above!)
                 detailsController.setName(loginUserName.getText().toString().trim());
-
+                //====================
 
                 //show the stage!! ++++
                 detailsStage.show();
