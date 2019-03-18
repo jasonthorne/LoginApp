@@ -70,18 +70,34 @@ public class LoginController {
                 && !loginPassword.getText().toString().trim().equals(""));//AND password text field is NOT empty
         {
 
+
+            /*
             //create a new stage:
             Stage detailsStage = new Stage();
 
-            //create a new root from FXML file. Try Catch needed as its file reading, so possibly a fallover point:
+            //Try Catch needed as its file reading, so possibly a fallover point:
             try{
-                Parent root = FXMLLoader.load(getClass().getResource("/sample/view/details.fxml"));
+
+                //create a loader object for FXML file:
+                FXMLLoader loader = new FXMLLoader();
+
+                //create a new root from FXML file using loader:
+                Parent root = loader.load(getClass().getResource("/sample/view/details.fxml"));
 
                 //create a new scene, and pass it the root:
                 Scene scene = new Scene(root);
 
                 //add the scene to the stage:
                 detailsStage.setScene(scene);
+
+                //====================
+                //create a details controller obj (to then pass info from txt fields to):
+                DetailsController detailsController = loader.getController(); //'loader' obj knows everything about 'details.xml' '.getController' gets all of the details from it's contoller ('DetailsController' as referenced in 'details.fxml' 'anchorPane' tab).
+                //These details include all of the labels such as 'detailsName', allowing them all to now be referenced.
+
+                //now we have access to DetailsController, we can invoke it's PUBLIC 'setName' method, and pass in whatever name the user has entered into 'loginUserName' textfield (above!)
+                detailsController.setName(loginUserName.getText().toString().trim());
+
 
                 //show the stage!! ++++
                 detailsStage.show();
@@ -92,7 +108,7 @@ public class LoginController {
             }catch (IOException e){
 
                 e.printStackTrace();
-            }
+            }*/
 
         }
 

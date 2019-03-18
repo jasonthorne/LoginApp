@@ -33,10 +33,15 @@ public class DetailsController {
     private Label detailsLinkedIn;
 
     @FXML
-    void initialize() {
+    public void initialize() {
 
 
 
+    }
+
+    public void setName(String name){
+        detailsWelcomeLbl.setText("Welcome " + name);
+        detailsName.setText(name);
     }
 }
 
