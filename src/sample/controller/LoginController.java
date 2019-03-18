@@ -1,7 +1,5 @@
 package sample.controller;
 
-
-
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -95,10 +93,23 @@ public class LoginController {
             //give the stage a new scene object, which is itself passed the root:
             detailsStage.setScene(new Scene(root));
 
+            //====================Moving data from this controller to DetailsController
+
+            //create a details controller obj (to then pass info from txt fields to):
+            DetailsController detailsController = loader.getController(); //'loader' obj knows everything about 'details.xml'. '.getController' gets all of the details from it's contoller ('DetailsController' as referenced in 'details.fxml' 'anchorPane' tab).
+            //These details include all of the labels such as 'detailsName', allowing them all to now be referenced.
+
+            //now we have access to DetailsController, we can invoke it's PUBLIC 'setName' method, and pass in whatever name the user has entered into 'loginUserName' textfield (above!)
+            detailsController.setName(loginUserName.getText().toString().trim());
+
+            //====================
 
 
+            //show the stage!! ++++
+            detailsStage.show();
 
-
+            //disallow resizing of window by user
+            detailsStage.setResizable(false);
 
             /*
             //create a new stage:

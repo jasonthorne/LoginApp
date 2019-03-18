@@ -41,7 +41,7 @@ public class DetailsController {
 
     public void setName(String name){
         detailsWelcomeLbl.setText("Welcome " + name);
-        detailsName.setText(name);
+        detailsName.setText("Name: " + name);
     }
 }
 
