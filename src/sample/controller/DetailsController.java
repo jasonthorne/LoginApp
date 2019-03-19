@@ -1,8 +1,16 @@
 package sample.controller;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 
 public class DetailsController {
@@ -27,13 +35,38 @@ public class DetailsController {
     private Label detailsProfession;
 
     @FXML
-    private Label detailsGithub;
+    private Hyperlink detailsGithub;
 
     @FXML
-    private Label detailsLinkedIn;
+    private Hyperlink detailsLinkedIn;
 
     @FXML
     public void initialize() {
+
+        //add action event listener handler to github link:
+        detailsGithub.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println(detailsGithub.getText());
+
+                if(Desktop.isDesktopSupported()){
+
+                        //BOTH these try catches are needed!!
+                        try {
+                            try {
+                                Desktop.getDesktop().browse(new URI("https://github.com/jasonthorne")); //create a new URI obj, to then pass inside our http
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }catch (URISyntaxException e) {
+                            e.printStackTrace();
+                        }
+
+
+                }
+
+            }
+        });
 
 
 
