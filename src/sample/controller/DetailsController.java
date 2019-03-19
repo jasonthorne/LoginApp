@@ -54,7 +54,7 @@ public class DetailsController {
                         //BOTH these try catches are needed!!
                         try {
                             try {
-                                Desktop.getDesktop().browse(new URI("https://github.com/jasonthorne")); //create a new URI obj, to then pass inside our http
+                                Desktop.getDesktop().browse(new URI("https://github.com/jasonthorne")); //create a new URI obj, to then pass inside our http link. THen pass that to desktop's browser
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
@@ -66,7 +66,39 @@ public class DetailsController {
                 }
 
             }
+
         });
+
+
+
+        //add action event listener handler to linkedIn link:
+        detailsLinkedIn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println(detailsLinkedIn.getText());
+
+                if(Desktop.isDesktopSupported()){
+
+                    //BOTH these try catches are needed!!
+                    try {
+                        try {
+                            Desktop.getDesktop().browse(new URI("https://linkedin.com/in/jason-thorne1008b112a")); //create a new URI obj, to then pass inside our http link. THen pass that to desktop's browser
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }catch (URISyntaxException e) {
+                        e.printStackTrace();
+                    }
+
+
+                }
+
+            }
+
+        });
+
+
+
 
 
 
