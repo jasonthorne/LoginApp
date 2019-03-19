@@ -84,7 +84,7 @@ public class LoginController {
                 e.printStackTrace();
             }
 
-            //create an new root, giving it the path to FXML file ("/sample/view/details.fxml")
+            //create an new root, giving it the path to FXML file (provided by 'loader': "/sample/view/details.fxml")
             Parent root = loader.getRoot();
 
             //create a new stage:
@@ -99,8 +99,8 @@ public class LoginController {
             DetailsController detailsController = loader.getController(); //'loader' obj knows everything about 'details.xml'. '.getController' gets all of the details from it's contoller ('DetailsController' as referenced in 'details.fxml' 'anchorPane' tab).
             //These details include all of the labels such as 'detailsName', allowing them all to now be referenced.
 
-            //now we have access to DetailsController, we can invoke it's PUBLIC 'setName' method, and pass in whatever name the user has entered into 'loginUserName' textfield (above!)
-            detailsController.setName(loginUserName.getText().toString().trim());
+            //now we have access to DetailsController, we can invoke it's PUBLIC 'setValues' method, and pass in whatever name the user has entered into 'loginUserName' textfield (above!)
+            detailsController.setValues(loginUserName.getText().toString().trim(), "Graduate, in need of job!", 35);
 
             //====================
 
@@ -111,44 +111,6 @@ public class LoginController {
             //disallow resizing of window by user
             detailsStage.setResizable(false);
 
-            /*
-            //create a new stage:
-            Stage detailsStage = new Stage();
-
-            //Try Catch needed as its file reading, so possibly a fallover point:
-            try{
-
-                //create a loader object for FXML file:
-                FXMLLoader loader = new FXMLLoader();
-
-                //create a new root from FXML file using loader:
-                Parent root = loader.load(getClass().getResource("/sample/view/details.fxml"));
-
-                //create a new scene, and pass it the root:
-                Scene scene = new Scene(root);
-
-                //add the scene to the stage:
-                detailsStage.setScene(scene);
-
-                //====================Moving data from this controller to DetailsController
-                //create a details controller obj (to then pass info from txt fields to):
-                DetailsController detailsController = loader.getController(); //'loader' obj knows everything about 'details.xml' '.getController' gets all of the details from it's contoller ('DetailsController' as referenced in 'details.fxml' 'anchorPane' tab).
-                //These details include all of the labels such as 'detailsName', allowing them all to now be referenced.
-
-                //now we have access to DetailsController, we can invoke it's PUBLIC 'setName' method, and pass in whatever name the user has entered into 'loginUserName' textfield (above!)
-                detailsController.setName(loginUserName.getText().toString().trim());
-                //====================
-
-                //show the stage!! ++++
-                detailsStage.show();
-
-                //disallow resizing of window by user
-                detailsStage.setResizable(false);
-
-            }catch (IOException e){
-
-                e.printStackTrace();
-            }*/
 
         }
 

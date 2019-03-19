@@ -39,9 +39,11 @@ public class DetailsController {
 
     }
 
-    public void setName(String name){
+    public void setValues(String name, String profession, int age){
         detailsWelcomeLbl.setText("Welcome " + name);
         detailsName.setText("Name: " + name);
+        detailsAge.setText("Age: " + String.valueOf(age)); //'String.valueOf(age' is converting the int to a String
+        detailsProfession.setText("Profession: " + profession);
     }
 }
 
