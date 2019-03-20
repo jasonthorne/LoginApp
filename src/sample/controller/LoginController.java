@@ -64,8 +64,8 @@ public class LoginController {
         //get the login window by targeting an element of it (loginBtn), and disable the window's visibility;
         loginBtn.getScene().getWindow().hide(); //Use the button to get the scene where the button resides, and use that to get the window, then call '.hide' on the window. (crazy!)
 
-        if (!loginUserName.getText().toString().trim().equals("") //if username text field is NOT empty
-                && !loginPassword.getText().toString().trim().equals(""));//AND password text field is NOT empty
+        if (!loginUserName.getText().toString().trim().equals(" ") //if username text field is NOT empty
+                && !loginPassword.getText().toString().trim().equals(" "));//AND password text field is NOT empty
         {
 
             //create a loader object for FXML file:
